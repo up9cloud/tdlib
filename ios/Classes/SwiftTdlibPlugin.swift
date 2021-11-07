@@ -110,7 +110,9 @@ class EventClient {
           self?.eventSink(res)
         }
       }
-      JsonClient.destroy(clientId: self!.clientId)
+      if (self != nil) {
+        JsonClient.destroy(clientId: self!.clientId)
+      }
     }
   }
   public func error(e: FlutterError) {
